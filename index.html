@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<title>Daniel Lopez 1001</title>
+<link rel="stylesheet" href="estilos.css">
+
+<body>
+    <div class="dos_calculadoras">
+        <!--PRIMERA CALCULADORA DE SUMAS Y DIVISIONES-->
+        <div class="datos">
+            <h1>Calculadora de sumas y divisiones</h1>
+            <h2>Sumar dos números:</h1>
+                <p>Por favor, introduce dos números (NUMEROS) :</p>
+                <input id="num1" placeholder="Primer valor.."><br>
+                <input id="num2" placeholder="Segundo valor..">
+                <button type="button" onclick="suma()"><strong>Sumar</strong></button>
+                <p id="sumando"></p>
+                <script>
+                    function suma() {
+                        var x, y, suma, text;
+                        x = document.getElementById("num1").value;
+                        y = document.getElementById("num2").value;
+                        if (isNaN(x) || isNaN(y)) {
+                            text = "Es necesarios introducir dos números válidos";
+                        } else {
+                            //si no ponemos parseFloat concatenaría x con y  
+                            suma = parseFloat(x) + parseFloat(y);
+                            text = suma;
+                        }
+                        document.getElementById("sumando").innerHTML = text;
+                    }
+                </script>
+
+                <h2>Dividir dos numeros:</h1>
+                    <p>Por favor, introduce dos números (NUMEROS) :</p>
+                    <input id="valor1" placeholder=" Primer valor.."><br>
+                    <input id="valor2" placeholder=" Segundo valor..">
+                    <button type="button" onclick="division()"><strong>Dividir</strong></button>
+                    <p id="dividiendo"></p>
+                    <script>
+                        function division() {
+                            var x, y, division, text;
+                            x = document.getElementById("valor1").value;
+                            y = document.getElementById("valor2").value;
+                            if (isNaN(x) || isNaN(y)) {
+                                text = "Es necesarios introducir dos números válidos";
+                            } else {
+                                division = parseFloat(x) / parseFloat(y);
+                                text = division;
+                            }
+                            document.getElementById("dividiendo").innerHTML = text;
+                        }
+                    </script>
+        </div>
+
+        <!-- SEGUNDA CALCULADORA, CONVERSION -->
+        <div class="datos">
+            <h1>Conversión kilometros y millas</h1>
+            <h2>Kilometros a millas:</h1>
+                <p>Por favor, introduce dos números (NUMEROS) :</p>
+                <input id="valorKilometro" placeholder="Kilometros"><br>
+                <button type="button" onclick="kilometroAMilla()"><strong>Calcular</strong></button>
+                <p id="resultado"></p>
+                <script>
+                    function kilometroAMilla() {
+                        var kilometro, milla, convertir, text;
+
+                        kilometro = document.getElementById("valorKilometro").value;
+                        milla = kilometro * 0.621371;
+
+                        if (isNaN(kilometro)) {
+                            text = "Es necesario introducir un valor correcto";
+                        } else {
+                            convertir = parseFloat(milla);
+                            text = convertir;
+                        }
+                        document.getElementById("resultado").innerHTML = text;
+                    }
+                </script>
+                <h2>Millas a Kilometros:</h1>
+                    <p>Por favor, introduce dos números (NUMEROS) :</p>
+                    <input id="valorMilla" placeholder="Milla"><br>
+                    <button type="button" onclick="conversion()"><strong>Calcular</strong></button>
+                    <p id="convertir"></p>
+                    <script>
+                        function conversion() {
+                            var kilometro, milla, convertir, text;
+
+                            milla = document.getElementById("valorMilla").value;
+                            kilometro = milla * 1.60934;
+
+                            if (isNaN(kilometro)) {
+                                text = "Es necesario introducir un valor correcto";
+                            } else {
+                                convertir = parseFloat(kilometro);
+                                text = convertir;
+                            }
+                            document.getElementById("convertir").innerHTML = text;
+                        }
+                    </script>
+
+        </div>
+    </div>
+    <p>Desarrollado por Daniel Lopez con amor💝 @2020</p>
+</body>
+
+</html>
